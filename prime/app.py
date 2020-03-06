@@ -32,6 +32,7 @@ def circutinfo():
 def hello():
     return 'Hello'
 
+@MyCircuitBreaker()
 def get_sqrt(num):
     sqrt_service = "{}/sqrt/calc/{}".format(os.environ.get('HOME_URL'),num)
     r = requests.get(sqrt_service, verify=False, timeout=60)
